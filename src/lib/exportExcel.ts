@@ -1,7 +1,7 @@
 import * as XLSX from "xlsx";
 import { getProcessos, getLancamentos, getPrazos } from "./store";
 
-const BRAND = "Angeline Sociedade de Advogados";
+const BRAND = "Gerson Gomes — Advocacia e Consultoria Jurídica";
 
 function autoFitColumns(rows: Record<string, any>[]): { wch: number }[] {
   if (!rows.length) return [];
@@ -117,5 +117,5 @@ export function exportToExcel() {
   );
 
   const date = new Date().toISOString().slice(0, 10);
-  XLSX.writeFile(wb, `angeline-relatorio-${date}.xlsx`);
+  XLSX.writeFile(wb, `gerson-gomes-relatorio-${date}.xlsx`);
 }

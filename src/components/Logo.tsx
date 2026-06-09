@@ -1,4 +1,4 @@
-import logo from "@/assets/angeline-logo.png";
+import logoAsset from "@/assets/gerson-gomes-logo.png.asset.json";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -8,20 +8,16 @@ interface LogoProps {
 }
 
 /**
- * Angeline Sociedade de Advogados — official brand logo.
- * Source PNG has a white background and dark mark; on dark surfaces we invert.
+ * Gerson Gomes — Advocacia e Consultoria Jurídica.
+ * Logo PNG transparente com monograma GG em dourado.
  */
 export function Logo({ className, variant = "light", maxHeight = 80 }: LogoProps) {
   return (
     <img
-      src={logo}
-      alt="Angeline Sociedade de Advogados"
+      src={logoAsset.url}
+      alt="Gerson Gomes — Advocacia e Consultoria Jurídica"
       style={{ maxHeight }}
-      className={cn(
-        "w-auto object-contain select-none",
-        variant === "dark" && "invert brightness-110",
-        className
-      )}
+      className={cn("w-auto object-contain select-none", className)}
       draggable={false}
     />
   );

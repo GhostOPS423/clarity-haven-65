@@ -51,8 +51,8 @@ export function TopBar({ searchQuery = "", onSearchChange }: TopBarProps) {
           size={20}
           className="cursor-pointer hover:text-primary transition-colors"
         />
-        <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">
-          JR
+        <div className="w-9 h-9 rounded-full bg-primary border border-accent/40 flex items-center justify-center text-xs font-serif font-bold text-accent tracking-wider">
+          GG
         </div>
       </div>
     </header>
