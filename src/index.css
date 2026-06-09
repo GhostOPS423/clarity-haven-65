@@ -1,0 +1,86 @@
+/* Local fonts (offline, bundled via @fontsource) */
+@import '@fontsource/noto-serif/400.css';
+@import '@fontsource/noto-serif/400-italic.css';
+@import '@fontsource/noto-serif/700.css';
+@import '@fontsource/public-sans/300.css';
+@import '@fontsource/public-sans/400.css';
+@import '@fontsource/public-sans/500.css';
+@import '@fontsource/public-sans/600.css';
+@import '@fontsource/public-sans/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 30% 97%;
+    --foreground: 158 40% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 158 40% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 158 40% 10%;
+
+    --primary: 158 64% 14%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 158 30% 30%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 150 25% 93%;
+    --muted-foreground: 158 12% 40%;
+
+    --accent: 42 80% 66%;
+    --accent-foreground: 158 64% 14%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 20% 88%;
+    --input: 150 20% 88%;
+    --ring: 158 64% 14%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --sidebar-bg: 158 65% 10%;
+    --sidebar-foreground: 150 25% 85%;
+    --sidebar-active: 42 80% 66%;
+    --sidebar-hover: 158 50% 18%;
+
+    --surface-low: 150 30% 95%;
+    --surface-high: 150 25% 91%;
+
+    --amber-accent: 42 80% 66%;
+    --amber-light: 42 100% 90%;
+
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif', serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Noto Serif', serif;
+  }
+  .font-body {
+    font-family: 'Public Sans', sans-serif;
+  }
+  .font-label {
+    font-family: 'Public Sans', sans-serif;
+  }
+}
