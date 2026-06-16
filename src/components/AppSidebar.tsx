@@ -35,7 +35,7 @@ export function AppSidebar({ onNewCase }: Props) {
     >
       {/* Header */}
       <div className={cn("p-6 flex flex-col items-center", collapsed && "p-3")}>
-        <Logo variant="dark" maxHeight={collapsed ? 36 : 80} />
+        <Logo variant="dark" maxHeight={collapsed ? 48 : 120} />
         {!collapsed && (
           <p className="mt-3 text-[10px] tracking-[0.2em] uppercase text-sidebar-foreground/50 font-label text-center">
             Gestão Financeira Jurídica
