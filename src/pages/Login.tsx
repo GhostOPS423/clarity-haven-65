@@ -8,7 +8,7 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4">
       <div className="w-full max-w-md bg-card border border-border rounded-lg shadow-lg p-10 flex flex-col items-center">
-        <Logo maxHeight={80} className="mb-8" />
+        <Logo maxHeight={140} className="mb-8" />
         <h1 className="text-xl font-serif text-foreground mb-2 text-center">
           Bem-vindo
         </h1>
