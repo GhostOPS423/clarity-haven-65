@@ -1,11 +1,29 @@
 import { TrendingUp, Scale, Clock, Landmark } from "lucide-react";
 import { motion } from "framer-motion";
-import { getHonorariosMes, getSaldoEmConta, getProcessosAtivosCount } from "@/lib/store";
+import { getHonorariosMes, getSaldoEmConta, getProcessosAtivosCount, getPrazos } from "@/lib/store";
+
+function parseLocalDate(iso: string): Date {
+  const [year, month, day] = iso.split("-").map(Number);
+  return new Date(year, month - 1, day);
+}
+
+function getPrazosProximos48h(): number {
+  const now = new Date();
+  const nowMillis = now.getTime();
+  const fortyEightHours = 48 * 60 * 60 * 1000;
+
+  return getPrazos().filter((p) => {
+    const date = parseLocalDate(p.data);
+    const diff = date.getTime() - nowMillis;
+    return diff > 0 && diff <= fortyEightHours;
+  }).length;
+}
 
 export function MetricCards() {
   const honorarios = getHonorariosMes();
   const saldo = getSaldoEmConta();
   const ativos = getProcessosAtivosCount();
+  const prazos48h = getPrazosProximos48h();
 
   const fmt = (v: number) =>
     v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
@@ -28,11 +46,11 @@ export function MetricCards() {
     },
     {
       label: "Prazos Próximos (48h)",
-      value: "—",
+      value: String(prazos48h),
       change: "Dados da agenda",
       positive: false,
       icon: Clock,
-      urgent: false,
+      urgent: prazos48h > 0,
     },
     {
       label: "Saldo em Conta",
